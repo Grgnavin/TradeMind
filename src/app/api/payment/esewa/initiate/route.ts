@@ -23,8 +23,8 @@ export async function POST(req: Request) {
       transaction_uuid: productId,
       amount: amount,
       total_amount: amount,
-      success_url: `${baseUrl}/dashboard?payment=success`,
-      failure_url: `${baseUrl}/?payment=failed`,
+      success_url: `${baseUrl}/payment/success`,
+      failure_url: `${baseUrl}/payment/error`,
     });
   } catch (error) {
     return NextResponse.json({ error: "Failed to initiate payment" }, { status: 500 });
